@@ -24,7 +24,7 @@ Validator.prototype.email = function (name, value){
 }
 
 Validator.prototype.password = function (name, value){
-  if (!/^(?=.*[a-zA-Z0-9])(?=.*[!@#$%^&*]).{6,10}$/.test(value)){
+  if (!/^(?=.*?[0-9])(?=.*?[A-Z])(?=.*?[#?!@$%^&*\-_]).{10,}$/.test(value)){
     this.errors[name] = "Mật khẩu phải có ký tự đặc biệt 6 - 10 ký tự";
     return false;
   }

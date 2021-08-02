@@ -65,7 +65,7 @@ function themNgDung() {
   var gioLam = document.getElementById("gioLam").value;
 
   var validator = new Validator ();
-  var isValid = validator.isRequired("tbTKNV", taiKhoan) && validator.taiKhoan("tbTKNV", taiKhoan); 
+  var isValid = validator.isRequired("tbTKNV", taiKhoan);
   isValid &= validator.isRequired("tbTen", hoTen) && validator.hoTen("tbTen", hoTen);
   isValid &= validator.isRequired("tbEmail", email) && validator.email("tbEmail", email);
   isValid &= validator.isRequired("tbMatKhau", matKhau) && validator.password("tbMatKhau", matKhau);
