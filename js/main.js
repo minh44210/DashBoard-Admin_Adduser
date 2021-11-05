@@ -64,19 +64,24 @@ function themNgDung() {
   var luongCB = document.getElementById("luongCB").value;
   var gioLam = document.getElementById("gioLam").value;
 
-  var validator = new Validator ();
+  var validator = new Validator();
   var isValid = validator.isRequired("tbTKNV", taiKhoan);
-  isValid &= validator.isRequired("tbTen", hoTen) && validator.hoTen("tbTen", hoTen);
-  isValid &= validator.isRequired("tbEmail", email) && validator.email("tbEmail", email);
-  isValid &= validator.isRequired("tbMatKhau", matKhau) && validator.password("tbMatKhau", matKhau);
+  isValid &=
+    validator.isRequired("tbTen", hoTen) && validator.hoTen("tbTen", hoTen);
+  isValid &=
+    validator.isRequired("tbEmail", email) && validator.email("tbEmail", email);
   isValid &= validator.isRequired("tbNgay", ngayLam);
   isValid &= validator.isRequired("tbChucVu", chucVu);
-  isValid &= validator.isRequired("tbLuongCB", luongCB) && validator.luongCB("tbLuongCB", luongCB);
-  isValid &= validator.isRequired("tbGiolam", gioLam) && validator.gioLam("tbGiolam", gioLam);
-  // Duyệt onject   
-  if (!isValid){
-    for(var key in validator.errors){
-      if(validator.errors[key]){
+  isValid &=
+    validator.isRequired("tbLuongCB", luongCB) &&
+    validator.luongCB("tbLuongCB", luongCB);
+  isValid &=
+    validator.isRequired("tbGiolam", gioLam) &&
+    validator.gioLam("tbGiolam", gioLam);
+  // Duyệt onject
+  if (!isValid) {
+    for (var key in validator.errors) {
+      if (validator.errors[key]) {
         document.getElementById(key).innerHTML = validator.errors[key];
       }
     }
@@ -174,11 +179,10 @@ function deleTable(event) {
 
 // Tìm Nhân Viên
 function timKiem() {
- var search = document.getElementById("searchName").value;
+  var search = document.getElementById("searchName").value;
 
- 
- dsnv = dsnv.filter(function (nv) {
-   return nv.xepL().indexOf(search) !== -1
- })
- hienThi()
+  dsnv = dsnv.filter(function (nv) {
+    return nv.xepL().indexOf(search) !== -1;
+  });
+  hienThi();
 }
